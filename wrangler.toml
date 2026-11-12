@@ -1,0 +1,19 @@
+name = "panel-familiar"
+main = "worker/index.mjs"
+compatibility_date = "2025-06-01"
+
+# La app se construye en dist/index.html y va dentro del Worker como texto
+[[rules]]
+type = "Text"
+globs = ["**/*.html"]
+fallthrough = false
+
+# Base de datos (crea la tuya con: npx wrangler d1 create panel-familiar, y pega aquí su id)
+[[d1_databases]]
+binding = "DB"
+database_name = "panel-familiar"
+database_id = "PON-AQUI-EL-ID-DE-TU-BASE-DE-DATOS"
+
+# Copia de seguridad diaria (hora UTC)
+[triggers]
+crons = ["17 3 * * *"]

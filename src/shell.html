@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="es">
+<head><!--BUILD-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Panel familiar</title>
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('fam_theme')==='dark'?'dark':'light'}catch(e){document.documentElement.dataset.theme='light'}</script>
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="apple-touch-icon" href="/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Panel familiar">
+<meta name="theme-color" content="#eaf0fb">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400..800&display=swap" rel="stylesheet">
+<style>
+<!--CSS--></style>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+<symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v9.5h13V10"/><path d="M10 19.5v-5h4v5"/></symbol>
+<symbol id="i-rutina" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16.5 9.5"/></symbol>
+<symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
+<symbol id="i-tareas" viewBox="0 0 24 24"><path d="M9.5 6h11M9.5 12h11M9.5 18h11"/><path d="M3.5 6l1.2 1.2L6.8 5M3.5 12l1.2 1.2L6.8 11M3.5 18l1.2 1.2L6.8 17"/></symbol>
+<symbol id="i-compra" viewBox="0 0 24 24"><path d="M3 10h18l-1.7 9a2 2 0 0 1-2 1.6H6.7a2 2 0 0 1-2-1.6L3 10z"/><path d="M8 10l3-6M16 10l-3-6"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><path d="M5 3v6a3 3 0 0 0 3 3v9M11 3v6a3 3 0 0 1-3 3M8 3v9"/><path d="M17 21V3c-2.2 1.2-3.5 4-3.5 7.5V14H17"/></symbol>
+<symbol id="i-banco" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15.6 8.6A4 4 0 0 0 9 10.5m0 3a4 4 0 0 0 6.6 1.9M7.5 10.8h5.5M7.5 13.2h5.5"/></symbol>
+<symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v3"/></symbol>
+<symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></symbol>
+<symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5V5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></symbol>
+<symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2.5"/><path d="M8.5 10.5V8a3.5 3.5 0 0 1 7 0v2.5"/></symbol>
+<symbol id="i-kids" viewBox="0 0 24 24"><circle cx="8.5" cy="8" r="3"/><circle cx="16.5" cy="10" r="2.4"/><path d="M3 19.5c.4-3 2.6-4.8 5.5-4.8s5.1 1.8 5.5 4.8M14.5 19.5c.3-2.1 1.8-3.4 3.8-3.4 1.2 0 2.2.5 2.7 1.4"/></symbol>
+<symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+<symbol id="i-chl" viewBox="0 0 24 24"><path d="M14.5 6l-6 6 6 6"/></symbol>
+<symbol id="i-chr" viewBox="0 0 24 24"><path d="M9.5 6l6 6-6 6"/></symbol>
+<symbol id="i-x" viewBox="0 0 24 24"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+<symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.4a4.3 4.3 0 0 1 7.5 2.4C19.5 15.4 12 20 12 20z"/></symbol>
+<symbol id="i-away" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M7 12h10"/></symbol>
+<symbol id="i-sol" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5V5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/></symbol>
+<symbol id="i-gear" viewBox="0 0 24 24"><path d="M4 7h9M19 7h1M4 17h1M11 17h9"/><circle cx="16" cy="7" r="2.4"/><circle cx="8" cy="17" r="2.4"/></symbol><symbol id="i-more" viewBox="0 0 24 24"><circle cx="5.5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="18.5" cy="12" r="1.6"/></symbol>
+<symbol id="i-casa" viewBox="0 0 24 24"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/><path d="M18.5 15l.8 2.1 2.2.9-2.2.8-.8 2.2-.8-2.2-2.2-.8 2.2-.9z"/><path d="M5.5 15.5l.6 1.5 1.5.6-1.5.6-.6 1.5-.6-1.5-1.5-.6 1.5-.6z"/></symbol>
+<symbol id="i-luna" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></symbol>
+<symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="2.5"/><path d="M3.8 7.2 12 13l8.2-5.8"/></symbol>
+</defs></svg>
+<div class="app">
+<nav class="rail" aria-label="Secciones">
+<div class="nav-main">
+<button class="nav-btn on" data-act="nav" data-v="home" aria-label="Inicio"><svg class="ic"><use href="#i-home"/></svg><span>Inicio</span></button>
+<button class="nav-btn" data-act="nav" data-v="rutina" aria-label="Rutina"><svg class="ic"><use href="#i-rutina"/></svg><span>Rutina</span></button>
+<button class="nav-btn" data-act="nav" data-v="tareas" aria-label="Tareas y exámenes"><svg class="ic"><use href="#i-tareas"/></svg><span>Tareas</span></button>
+<button class="nav-btn" data-act="nav" data-v="banco" aria-label="Paguita"><svg class="ic"><use href="#i-banco"/></svg><span>Paguita</span></button>
+<button class="nav-btn" data-act="nav" data-v="cal" aria-label="Agenda"><svg class="ic"><use href="#i-cal"/></svg><span>Agenda</span></button>
+<button class="nav-btn" data-act="nav" data-v="menu" aria-label="Menú semanal"><svg class="ic"><use href="#i-menu"/></svg><span>Menú</span></button>
+<button class="nav-btn" data-act="nav" data-v="compra" aria-label="Compra"><svg class="ic"><use href="#i-compra"/></svg><span>Compra</span></button>
+<button class="nav-btn" data-act="nav" data-v="casa" aria-label="Tareas de casa"><svg class="ic"><use href="#i-casa"/></svg><span>Casa</span></button>
+</div>
+<div class="grow"></div>
+<button class="nav-btn adult-only" data-act="aj" data-t="rut" aria-label="Ajustes"><svg class="ic"><use href="#i-gear"/></svg><span>Ajustes</span></button>
+<button class="nav-btn adult-only kid-ok" data-act="mic" aria-label="Dictar por voz"><svg class="ic"><use href="#i-mic"/></svg><span>Voz</span></button>
+<button class="nav-btn" id="kidBtn" data-act="kid" aria-label="Modo niños"><svg class="ic"><use href="#i-kids"/></svg><span>Niños</span></button>
+<button class="nav-btn" id="themeBtn" data-act="theme" aria-label="Cambiar tema"><svg class="ic" id="themeIc"><use href="#i-moon"/></svg><span>Tema</span></button>
+<div class="clock" aria-live="off"><span id="rBat"></span><b class="num" id="clk">--:--</b><small id="clkd"></small></div>
+</nav>
+<main class="views">
+<section class="view on" id="v-home" aria-label="Inicio">
+<div class="dash" id="dash">
+<header class="d-head" id="dHead"></header>
+<div class="d-band"><div class="d-al" id="dAl"></div><div class="d-tools" id="dTools"></div></div>
+<section class="card dc d-hoy" id="dHoy" aria-label="Hoy"></section>
+<section class="card dc d-sem" id="dSem" aria-label="Próximos 7 días"></section>
+<section class="card dc d-menu" id="dMenu" aria-label="Menú de hoy"></section>
+<section class="card dc d-tk" id="dTk" aria-label="Tareas"></section>
+<section class="card dc d-casa" id="dCasa" aria-label="Casa hoy"></section>
+<section class="card dc d-cmp" id="dCmp" aria-label="Compra"></section>
+<section class="card dc d-kids" id="dKids" aria-label="Rutina de hoy"></section>
+</div>
+<div class="home" id="hub">
+<div class="col">
+<div class="hero" id="hero"></div>
+<div class="card agenda-card"><div class="scrolly" id="agenda"></div></div>
+</div>
+<div class="col">
+<div class="card sun" id="weather"><div><span class="chip">Tiempo</span></div><div></div><div class="temp num">–</div><div></div><div class="desc">Cargando el tiempo…</div></div>
+<div class="card wk" id="wkCard"></div>
+<div class="card" id="menuCard"></div>
+</div>
+<div class="col">
+<div class="kids2" id="kidsRow"></div>
+<div class="tiles" id="tiles"></div>
+<div class="card casa-card" id="casaCard" hidden></div>
+<div class="card upnext-card"><h2>Lo próximo</h2><div class="scrolly" id="upnext"></div></div>
+</div>
+</div>
+</section>
+<section class="view" id="v-rutina" aria-label="Rutina de hoy">
+<div class="vhead"><h1>Rutina de hoy</h1><span class="chip" id="rutDate"></span><span style="flex:1"></span><button class="btn sm" data-act="buz">📮 Buzón</button><button class="btn sm adult-only kid-ok" data-act="ntnew">📌 Dejar nota</button><button class="btn sm adult-only" data-act="cedit">🏠 Tareas de casa</button></div>
+<div class="rut" id="rut"></div>
+</section>
+<section class="view" id="v-cal" aria-label="Agenda">
+<div class="vhead">
+<h1>Agenda</h1>
+<button class="iconbtn" data-act="calprev" aria-label="Semana anterior"><svg class="ic"><use href="#i-chl"/></svg></button>
+<button class="btn" data-act="caltoday">Esta semana</button>
+<button class="iconbtn" data-act="calnext" aria-label="Semana siguiente"><svg class="ic"><use href="#i-chr"/></svg></button>
+<span class="chip" id="calRange"></span>
+<span class="sp"></span>
+<div class="legend"><span><i class="dot k-a"></i><u id="lgA" style="text-decoration:none">Niño</u></span><span><i class="dot k-e"></i><u id="lgE" style="text-decoration:none">Niña</u></span><span><i class="dot k-all"></i>Todos</span><span><i class="sw us"></i>Con peques 🎉🥳😄</span><span><i class="sw them"></i>Sin peques 😢</span></div>
+<button class="btn sm ghost adult-only" data-act="wkrange">Marcar varios fines de semana</button>
+</div>
+<div id="ag9"></div><div class="cal"><div class="cal-scroll" id="calScroll"></div></div><div class="agl" id="agl"></div>
+</section>
+<section class="view" id="v-tareas" aria-label="Tareas y exámenes">
+<div class="vhead"><h1>Tareas y exámenes</h1><span class="chip" id="tkInfo"></span></div>
+<div class="board" id="board"></div>
+</section>
+<section class="view" id="v-compra" aria-label="Lista de la compra">
+<div class="vhead">
+<h1>Compra</h1><span class="chip" id="cmpInfo"></span><button class="chip" id="meBtn" data-act="whoami" aria-label="Quién eres"></button><span class="sp"></span>
+<button class="btn" data-act="aisle">↕ Orden</button><button class="btn primary" id="supBtn" data-act="sup">🛒 Modo súper</button>
+<button class="btn ghost adult-only kid-ok" data-act="clear" id="clearBtn">Limpiar comprados</button>
+</div>
+<div class="shop" id="shop">
+<div class="shop-top card" id="shopT">
+<form id="addForm" autocomplete="off"><input id="addInp" placeholder="Añadir a la compra…" enterkeyhint="done" aria-label="Producto a añadir"><button class="btn" type="button" data-act="micadd" aria-label="Dictar la lista">🎤</button><button class="btn primary" type="submit">Añadir</button></form>
+<div class="sug" id="sug"></div></div><div class="shop-l card" id="shopL"><div id="favsBox"></div>
+<h2 class="eyebrow catt" data-act="catt" role="button" tabindex="0">Todos los productos <span class="cattx">▾</span></h2><div class="csecs" id="csecs"></div>
+<div class="cat" id="cat"></div>
+</div>
+<div class="shop-r" id="shopR"></div>
+</div>
+</section>
+<section class="view" id="v-casa" aria-label="Tareas de casa">
+<div class="vhead"><h1>Casa</h1><span class="chip" id="casaInfo"></span><span class="sp"></span><button class="btn sm" data-act="wsum">📋 Resumen</button><button class="btn sm adult-only" data-act="crot">🔄 Rotar ahora</button><button class="btn sm adult-only" data-act="cedit">✏️ Tareas</button></div>
+<div class="casa" id="casa"></div>
+</section>
+<section class="view" id="v-menu" aria-label="Menú semanal">
+<div class="vhead">
+<h1>Menú semanal</h1>
+<button class="iconbtn" data-act="menuprev" aria-label="Semana anterior"><svg class="ic"><use href="#i-chl"/></svg></button>
+<button class="btn" data-act="menutoday">Esta semana</button>
+<button class="iconbtn" data-act="menunext" aria-label="Semana siguiente"><svg class="ic"><use href="#i-chr"/></svg></button>
+<span class="chip" id="menuRange"></span><span style="flex:1"></span><button class="btn sm adult-only" data-act="menushop">🛒 Ingredientes a la compra</button>
+</div>
+<div class="mgrid" id="mgrid"></div>
+</section>
+<section class="view" id="v-banco" aria-label="Paguita">
+<div class="vhead"><h1>Paguita</h1><span class="chip ok" id="bankChip">5 € a la semana · 1 € por día completo</span><span style="flex:1"></span><button class="btn sm adult-only" data-act="aj" data-t="pag">⚙️ Ajustes de paguita</button></div>
+<div class="bank" id="bank"></div>
+</section>
+</main>
+</div>
+<button class="fab" id="fab" data-act="add" aria-label="Añadir"><svg class="ic"><use href="#i-plus"/></svg></button>
+<div class="scrim" id="scrim" hidden><div class="sheet" id="sheet" role="dialog" aria-modal="true"></div></div>
+<div id="sleep" hidden><div class="sl-wrap" id="slWrap"><div class="sl-top"><div class="sl-t num" id="slT"></div><div class="sl-side"><div class="sl-d" id="slD"></div><div class="sl-w" id="slW"></div><div class="sl-g" id="slG"></div></div></div><div class="sl-mid" id="slM"></div><div class="sl-fam" id="slF"></div></div><div class="sl-h">Toca para volver</div></div>
+<div class="toast" id="toast" role="status" hidden></div>
+<style>[hidden]{display:none!important}</style><div id="login" hidden style="position:fixed;inset:0;z-index:9999;background:var(--bg);display:flex;align-items:center;justify-content:center;padding:24px"><form id="loginForm" style="background:var(--surface);border-radius:28px;padding:32px;max-width:420px;width:100%;display:flex;flex-direction:column;gap:14px;box-shadow:0 10px 40px rgba(0,0,0,.12)"><h2 style="font:600 28px var(--font-display);margin:0">🌺 Panel familiar</h2><p id="loginMsg" style="margin:0;font-weight:700;color:var(--ink2)">Escribe la contraseña</p><input id="loginKey" aria-label="Contraseña" type="password" autocomplete="current-password" autocapitalize="none" spellcheck="false" placeholder="Contraseña" style="font:700 22px var(--font-body);padding:14px 16px;border-radius:16px;border:2px solid var(--line,#ccd);background:var(--sunk);color:var(--ink)"><button class="btn primary" type="submit" style="padding:14px;font-size:18px">Entrar</button></form></div>
+<script>
+<!--JS--></script>
+</html>

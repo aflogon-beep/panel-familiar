@@ -1,0 +1,29 @@
+/* ===== Batería de la tablet ===== */
+#dBat:empty{display:none}
+.bat19{flex:none;display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0 14px;border-radius:999px;background:var(--surface);color:var(--ink);font:800 16px var(--font-body);white-space:nowrap;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.bat19-i{width:30px;height:16px;flex:none}
+#dBat{flex:none;display:flex}
+#rBat:empty{display:none}
+#rBat{display:flex;justify-content:center;margin-bottom:8px}
+#rBat .bat19{flex-direction:column;gap:3px;min-height:0;padding:7px 6px 6px;border-radius:14px;font-size:13px;box-shadow:none;background:var(--sunk)}
+#rBat .bat19-i{width:28px;height:15px}
+#rBat .bat19.low{background:var(--exam-soft)}#rBat .bat19.crit{background:var(--bad-soft)}
+@media (max-height:700px){#rBat{margin-bottom:4px}#rBat .bat19{flex-direction:row;gap:4px;padding:4px 7px;font-size:12px;border-radius:10px}#rBat .bat19-i{width:20px;height:11px}}
+/* en tablet horizontal la cabecera va justa: el indicador vive en la barra lateral, junto al reloj */
+@media (min-width:900px) and (orientation:landscape){#dBat{display:none}}
+@media (max-width:1100px){.bat19{padding:0 11px;gap:5px;font-size:15px}.bat19-i{width:26px;height:14px}}
+.bat19.low{background:var(--exam-soft);color:var(--exam-ink)}
+.bat19.crit{background:var(--bad-soft);color:var(--bad-ink);animation:bat19p 1.6s ease-in-out infinite}
+.bat19.chg{color:var(--us-ink)}
+@keyframes bat19p{50%{box-shadow:0 0 0 6px rgba(229,55,43,.18)}}
+.bat19b{position:fixed;left:50%;top:max(14px,env(safe-area-inset-top));transform:translateX(-50%);z-index:9000;display:flex;align-items:center;gap:14px;max-width:min(560px,calc(100vw - 24px));padding:12px 12px 12px 18px;border-radius:22px;background:var(--bg);color:var(--ink);box-shadow:0 12px 40px rgba(0,0,0,.22);border:2px solid #f0a020;animation:bat19in .35s cubic-bezier(.2,1.4,.4,1)}
+.bat19b.crit{border-color:#e5372b;background:linear-gradient(var(--bad-soft),var(--bad-soft)),var(--bg)}
+.bat19b.full{border-color:#22a447}
+.bat19b-e{font-size:34px;line-height:1}
+.bat19b-t{display:flex;flex-direction:column;min-width:0}
+.bat19b-t b{font:800 19px var(--font-display)}
+.bat19b-t small{font-size:14px;color:var(--ink2)}
+.bat19b button{flex:none;min-height:46px;padding:0 20px;border-radius:999px;border:0;background:var(--accent);color:#fff;font:800 16px var(--font-body)}
+.bat19b.crit button{background:#e5372b}.bat19b.full button{background:#22a447}
+@keyframes bat19in{from{transform:translate(-50%,-30px);opacity:0}}
+@media (prefers-reduced-motion:reduce){.bat19.crit,.bat19b{animation:none}}

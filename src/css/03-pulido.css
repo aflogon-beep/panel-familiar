@@ -1,0 +1,23 @@
+/* ===== v4 · cristal pulido: tablet = ver, movil = gestionar ===== */
+:root{
+--r-card:28px;--r-in:18px;
+--shadow-s:0 8px 24px var(--gs);
+--ink-soft:var(--ink2);
+}
+/* --- tipografia y ritmo comunes --- */
+body{font-feature-settings:"cv11","ss01";text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased}
+.vhead{gap:10px 12px;min-height:52px}
+.vhead h1{font:800 34px/1.05 var(--font-display);letter-spacing:-.035em}
+.eyebrow,.sub,.rg,.card h2{font:800 13px/1.2 var(--font-body);letter-spacing:.09em;text-transform:uppercase;color:var(--ink2)}
+.chip{font-size:14px;padding:4px 12px;font-weight:800}
+.card,.rp,.bkc,.cal,.sec,.bcol,.mday,.cm{border-radius:var(--r-card)}
+.rail{border-radius:30px}
+.btn{min-height:44px;font-size:15px}
+.btn.sm{min-height:44px}
+.empty{font-weight:700;color:var(--ink2)}
+
+/* --- avatares apilados (adultos / todos) --- */
+.avs{display:inline-flex;align-items:center;flex:none}
+.avs .avt{box-shadow:0 0 0 2px var(--surface)}
+.avs.stk .avt+.avt{margin-left:-11px}
+

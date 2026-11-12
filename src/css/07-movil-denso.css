@@ -1,0 +1,51 @@
+/* ===== movil: denso y a sangre ===== */
+@media (max-width:640px){
+body{padding-left:max(8px,env(safe-area-inset-left,0px));padding-right:max(8px,env(safe-area-inset-right,0px));padding-top:max(6px,env(safe-area-inset-top,0px));padding-bottom:calc(72px + env(safe-area-inset-bottom,0px))}
+.view{gap:8px}
+.vhead{gap:6px 8px;min-height:0;padding:2px 4px 0}
+.vhead h1{font-size:26px;letter-spacing:-.03em}
+.vhead .chip,.vhead .btn{min-height:36px;font-size:13.5px}
+.vhead .btn.sm{min-height:40px;padding:0 12px}
+.card,.rp,.bkc,.cal,.sec,.bcol,.mday,.cm,.agd{border-radius:22px}
+.card,.rp,.bkc,.cm{padding:12px}
+.sec{padding:8px 10px;gap:2px}
+.agd{padding:8px 10px;margin-bottom:8px}
+.hero{padding:0 4px}
+.hero .day{font-size:32px}
+.hero .date{font-size:15px;margin-top:1px}
+#hub{gap:8px}
+.h-top{gap:8px}
+.h-wx{padding:6px 12px;font-size:16px}
+.nowline{margin-top:6px}
+.alerts{gap:5px;margin-top:6px}
+.alerts .al{padding:7px 12px;font-size:14px;border-radius:14px}
+.qk{margin-top:8px}
+.qkf input,.qkf .btn{min-height:46px;border-radius:16px}
+.qkg{gap:8px}
+.qkg button{min-height:60px;padding:8px 12px;border-radius:18px}
+.qkg button span{font-size:24px}
+.qkg button b{font-size:16px}
+.qkg button small{font-size:12.5px}
+.hbtns{margin-top:6px}
+.li{padding:3px 2px;row-gap:3px}
+.li-img{width:44px;height:44px;border-radius:12px}
+.li{grid-template-columns:44px minmax(0,1fr) 34px 34px}
+.tk{padding:9px 10px;border-radius:16px}
+.xm{padding:9px 10px;border-radius:16px;grid-template-columns:54px minmax(0,1fr);gap:10px}
+.chk{min-height:54px;padding:5px 12px 5px 8px;font-size:18px}
+.rp-h h2{font-size:24px}
+.mday{padding:6px 8px;gap:6px}
+.mc{min-height:62px;padding:8px 10px}
+.mday>h2{font-size:14px}
+.bkc{gap:10px}
+.cm{gap:8px}
+.sx-h{padding:0 0 6px;gap:10px}
+.sx-x{width:40px;height:40px;font-size:17px}
+.sx-t b{font-size:19px}
+.sxr{min-height:58px;padding:8px 12px;margin-bottom:5px;border-radius:16px}
+#v-compra .vhead .btn,#v-compra .vhead .chip{min-height:38px;padding:0 11px;font-size:13.5px}
+#v-compra .vhead .sp{display:none}
+.toast{bottom:calc(138px + env(safe-area-inset-bottom,0px))}
+.rail{padding:4px 4px calc(4px + env(safe-area-inset-bottom,0px))}
+.nav-main .nav-btn{height:50px}
+}
