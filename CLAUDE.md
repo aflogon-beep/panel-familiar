@@ -2,11 +2,17 @@
 
 Este repositorio es un panel familiar (tablet en la nevera + móviles) que se instala en la cuenta de Cloudflare de quien lo usa. Lo normal es que la persona que te abre aquí **no sea quien lo programó** y quiera que la guíes para instalarlo y configurarlo. Háblale en español, en lenguaje llano, y sin dar por hecho que es programador.
 
-## Dónde ejecutar los comandos
-La instalación usa `wrangler`, que necesita **red normal y un navegador para iniciar sesión en Cloudflare**. Por eso los comandos tienen que ejecutarse **en el ordenador de la persona**, no en un entorno en la nube.
-- **Claude Code en su ordenador:** ya estás en el sitio correcto.
-- **App de Claude con el ordenador vinculado:** ejecuta todo en su ordenador, dentro de una carpeta suya (por ejemplo `Documentos/panel-familiar`). Si el repo no está, clónalo ahí con `git clone`; si no tiene git, descarga el ZIP del repo y descomprímelo. Trabaja siempre dentro de esa carpeta.
-- **App de Claude sin ordenador vinculado:** no intentes instalarlo desde la nube, porque `wrangler login` y la red de Cloudflare no funcionan ahí. Explícale que abra la app de escritorio de Claude, vincule su ordenador (o empiece una tarea nueva con el ordenador seleccionado) y vuelva a pedírtelo.
+## Dónde se instala
+Lo normal es que la persona use **Claude Code en la web** (claude.ai/code), es decir, una sesión en la nube **sin navegador**: `wrangler login` no funciona ahí. La instalación se hace con un **token de API de Cloudflare** que la persona guarda en el entorno de la sesión (lo explica `INSTALAR-CON-CLAUDE.md`). Antes de nada, comprueba:
+1. `echo ${CLOUDFLARE_API_TOKEN:+token-ok} ${CLOUDFLARE_ACCOUNT_ID:+cuenta-ok}` debe mostrar `token-ok cuenta-ok`. **Nunca imprimas el token.**
+2. `curl -s -o /dev/null -w '%{http_code}' https://api.cloudflare.com/client/v4/user/tokens/verify` no debe fallar por red. Un 400 o un 401 está bien; un 403 del proxy o un fallo de conexión significa que el entorno no deja salir a Cloudflare.
+3. `npx wrangler whoami` debe mostrar su cuenta.
+
+Si falta el token o la red, no sigas: explícale los pasos de «Prepara el entorno de Claude» de `INSTALAR-CON-CLAUDE.md` (crear el token, ponerlo en el entorno y permitir `api.cloudflare.com` y `*.workers.dev`), y que te avise cuando esté. Los cambios de variables se notan en una sesión nueva.
+
+Si en cambio estás en **su ordenador** (Claude Code local o la app de Claude con el ordenador vinculado), puedes usar `npx wrangler login`, que abre el navegador, en lugar del token.
+
+**Sus datos van en un repo privado.** Los nombres de su familia acabarán en `src/js/00-config.js`. Antes de hacer commit, comprueba que el repo de la sesión es **privado** (`git remote -v` y pregúntale si hace falta). Si es público o es el repo original, no subas su configuración: díselo y propón importarlo como repo privado.
 
 ## Cuando te pidan instalarlo (o con `/instalar`)
 
@@ -36,7 +42,7 @@ Con las respuestas, edita **solo** `src/js/00-config.js`. Su formato está comen
 - Ejecuta `npm install`.
 
 ### 4. Cloudflare
-1. `npx wrangler login` abre el navegador: la persona tiene que aceptar ahí. Si no tiene cuenta, que la cree en dash.cloudflare.com (es gratis).
+1. Acceso: en la nube ya lo tienes por el token (`npx wrangler whoami`); en su ordenador, `npx wrangler login`. Exporta `WRANGLER_SEND_METRICS=false` para que wrangler no intente enviar estadísticas.
 2. `npx wrangler d1 create panel-familiar` y copia el `database_id` en `wrangler.toml`, sustituyendo `PON-AQUI-EL-ID-DE-TU-BASE-DE-DATOS`.
 3. Secretos (cada comando lee el valor por la entrada estándar):
    - `FAMILY_KEY`: la contraseña inicial del paso 2.
@@ -44,6 +50,8 @@ Con las respuestas, edita **solo** `src/js/00-config.js`. Su formato está comen
    - `DATA_KEY`: genera una con `openssl rand -base64 32`. **Antes de guardarla**, dile que la copie en su gestor de contraseñas: cifra los datos y, si se pierde, no se pueden recuperar.
    Pásalos así para que no queden en el historial de la terminal: `openssl rand -hex 32 | npx wrangler secret put SESSION_SECRET`. Para `FAMILY_KEY` y `DATA_KEY`, que la persona necesita ver, enséñaselas una vez y no las escribas en ningún archivo del repo.
 4. `npm run deploy`. Al terminar sale la dirección `https://panel-familiar.<subdominio>.workers.dev`.
+   Si dice que hace falta registrar un subdominio de workers.dev, es una cuenta nueva: que entre una vez en dash.cloudflare.com › **Workers y Pages** y acepte el subdominio que le propone (o elige uno). Después vuelve a publicar.
+5. Haz commit de `src/js/00-config.js` y `wrangler.toml` en su repo **privado**, con un mensaje claro, y súbelo. Así la próxima sesión ya lo tiene todo.
 
 ### 5. Verifica
 - `curl -s -o /dev/null -w '%{http_code}' <url>/` debe dar 200.
@@ -59,7 +67,7 @@ Explícale, en este orden:
 5. Repasar en **Ajustes** las rutinas, la paguita, los premios y, si quiere, los calendarios de Google, Outlook o iCloud (enlace iCal secreto).
 
 ## Actualizar más adelante
-`git pull` y `npm run deploy`. Los datos están en D1 y no se tocan al publicar.
+Trae los cambios del repo original (`https://github.com/aflogon-beep/panel-familiar`): añádelo como remoto `upstream`, `git fetch upstream` y `git merge upstream/main`, conservando su `00-config.js` y su `wrangler.toml`. Luego `npm run deploy`. Los datos están en D1 y no se tocan al publicar.
 
 ## Reglas
 - **Nunca** subas a git `.dev.vars`, contraseñas, `DATA_KEY` ni `SESSION_SECRET`. `wrangler.toml` lleva el id de su base de datos: si la persona publica su copia, avísale de que ese id no es secreto, pero tampoco hace falta compartirlo.
