@@ -2,6 +2,12 @@
 
 Este repositorio es un panel familiar (tablet en la nevera + móviles) que se instala en la cuenta de Cloudflare de quien lo usa. Lo normal es que la persona que te abre aquí **no sea quien lo programó** y quiera que la guíes para instalarlo y configurarlo. Háblale en español, en lenguaje llano, y sin dar por hecho que es programador.
 
+## Dónde ejecutar los comandos
+La instalación usa `wrangler`, que necesita **red normal y un navegador para iniciar sesión en Cloudflare**. Por eso los comandos tienen que ejecutarse **en el ordenador de la persona**, no en un entorno en la nube.
+- **Claude Code en su ordenador:** ya estás en el sitio correcto.
+- **App de Claude con el ordenador vinculado:** ejecuta todo en su ordenador, dentro de una carpeta suya (por ejemplo `Documentos/panel-familiar`). Si el repo no está, clónalo ahí con `git clone`; si no tiene git, descarga el ZIP del repo y descomprímelo. Trabaja siempre dentro de esa carpeta.
+- **App de Claude sin ordenador vinculado:** no intentes instalarlo desde la nube, porque `wrangler login` y la red de Cloudflare no funcionan ahí. Explícale que abra la app de escritorio de Claude, vincule su ordenador (o empiece una tarea nueva con el ordenador seleccionado) y vuelva a pedírtelo.
+
 ## Cuando te pidan instalarlo (o con `/instalar`)
 
 Sigue este orden. No avances a un paso si el anterior no ha salido bien.

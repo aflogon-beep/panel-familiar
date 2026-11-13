@@ -17,7 +17,7 @@ Panel para la familia pensado para una **tablet en la nevera** y para los **móv
 
 La familia es de **dos peques y dos adultos**. Los nombres, colores y demás se configuran en un archivo.
 
-> 💡 **¿Usas Claude Code?** Clona el repo, ábrelo con Claude Code y escribe `/instalar`. Te explicará qué tiene, te hará las preguntas de configuración y te guiará en la instalación paso a paso.
+> 💡 **¿Usas Claude?** Sigue [INSTALAR-CON-CLAUDE.md](INSTALAR-CON-CLAUDE.md): copias un mensaje en la app de Claude y te lo instala, haciéndote antes las preguntas de configuración. Con Claude Code basta con abrir el repo y escribir `/instalar`.
 
 ## Requisitos
 
